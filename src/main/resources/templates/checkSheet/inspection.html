@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="common/base::layout(~{::div.container-fluid})" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8"/>
+
+</head>
+<body>
+
+<div class="container-fluid">
+  <th:block th:if="${context == 'CREATE'}" th:replace="layout/inspection-modal-popup  :: inspection-modal-poppup"></th:block>
+
+  <th:block th:replace="layout/inspection-layout :: inspection-layout"></th:block>
+
+  <script th:src="@{/js/app/inspection.js}"></script>
+
+</div>
+
+
+</body>
+</html>

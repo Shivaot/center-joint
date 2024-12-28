@@ -1,0 +1,94 @@
+
+/** sidebar */
+.sidebar {
+    width: 15%;
+    background: #2f4050;
+    height: 100%;
+    position: fixed;
+    padding-top: 45px;
+    z-index: 9100;
+    top: 95px;
+}
+
+
+@media only screen and (max-width: 1280px) {
+    .sidebar {
+        display: none;
+        width: 100% !important;
+        background: #2f4050;
+        height: 100vh;
+        position: fixed;
+        padding-top: 8vh;
+        top: 100px;
+    }
+    .content {
+        margin-left: 0% !important;
+    }
+
+}
+
+.sidebar a {
+    display: block;
+    width: 100%;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar a:hover {
+    background: #2c3746;
+}
+
+.sidebar .divider {
+    height: .5px;
+    width: 100%;
+    background: #e2e2e2;
+    margin-top: 10px;
+}
+
+.sidebar .crossBtn {
+    position: absolute;
+    top: 0;
+    right: 35px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.header-right,.content-header-right {
+    float: right;
+}
+
+.content {
+    margin-top: 120px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .content {
+        margin-top: 10vh;
+        margin-left: 20%;
+    }
+}
+
+
+#tata_hitachi_loader {
+    background: url('/images/logo.gif') no-repeat center center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+    background-color: white;
+}
+
+#inspection-table th {
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+}
+
+#inspection-table th:first-child {
+    border-left: 1px solid #dddddd;
+}

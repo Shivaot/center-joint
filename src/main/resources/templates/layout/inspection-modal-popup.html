@@ -1,0 +1,22 @@
+<div th:fragment="inspection-modal-poppup" class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Select a Modal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <select id="model-name-selector" class="form-control">
+                        <option th:each="model : ${modelList}" th:value="${model.id}"
+                                th:text="${model.modelName}"></option>
+                    </select></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="loadSheet()">Next</button>
+            </div>
+        </div>
+    </div>
+</div>

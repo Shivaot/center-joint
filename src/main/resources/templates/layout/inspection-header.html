@@ -1,0 +1,30 @@
+<table th:fragment="inspection-header" th:if="${modelName != null}" class="table table-sm table-bordered" id="inspection-header-table">
+  <thead>
+  <tr>
+    <th colspan="4" class="text-center" th:text="${heading}">
+    </th>
+  </tr>
+  <tr>
+    <th scope="col">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon0">Model-</span>
+        </div>
+        <input type="text" class="form-control" id="modelName" th:value="${context == 'UPDATE'? sheet.modelName: modelName}" readonly>
+      </div>
+    </th>
+    <th scope="col">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">MSN-</span>
+        </div>
+        <input type="text" class="form-control" id="msn" th:value="${context == 'UPDATE' ? sheet.msn : updateMsn}">
+      </div>
+    </th>
+    <th scope="col">
+      Revision - 0
+    </th>
+  </tr>
+
+  </thead>
+</table>

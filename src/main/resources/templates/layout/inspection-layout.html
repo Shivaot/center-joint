@@ -1,0 +1,42 @@
+<div th:fragment="inspection-layout" xmlns:th="http://www.w3.org/1999/xhtml">
+    <th:block th:replace="layout/inspection-header :: inspection-header"></th:block>
+
+
+    <table id="inspection-table" class="cell-border display compact" style="width:100%">
+        <thead>
+        <tr>
+            <th>SI No</th>
+            <th>Seq Serial No</th>
+            <th>Assembly/Function</th>
+            <th>PDI Check Points</th>
+            <th>Key Point</th>
+            <th>Comment</th>
+            <th>Status</th>
+            <th>Upload Image</th>
+            <th>View Image</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>Station 1</td>
+            <td>as  asd a sd asd a sd as d as da sd a sd as d as das d</td>
+            <td>Visual</td>
+            <td>Visual</td>
+            <td><input type='radio' class='btn-check na-outlined' name='options-outlined0' id='0-na' autocomplete='off'
+                       value='NA'>
+                <label class='btn btn-outline-warning' for='0-na'>NA</label>
+                <input type='radio' class='btn-check ng-outlined' name='options-outlined0' id='0-ng' autocomplete='off'
+                       value='NG'>
+                <label class='btn btn-outline-danger' for='0-ng'>NG</label>
+                <input type='radio' class='btn-check ok-outlined' name='options-outlined0' id='0-ok' autocomplete='off'
+                       value='OK'>
+                <label class='btn btn-outline-success' for='0-ok'>OK</label></td>
+            <td>Upload Image</td>
+            <td>View Image</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

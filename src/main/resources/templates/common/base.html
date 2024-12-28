@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" th:fragment="layout(content)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/all.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/datatables.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/jquery.dataTables.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <title th:text="${title}">Base HTML</title>
+    <script th:inline="javascript">
+        var modelList = [[${modelList}]];
+        var isInspectionSheet= [[${IS_INSPECTION_SHEET}]];
+        var sheetType= [[${sheetType}]];
+        var context = [[${context}]];
+        var modelName = [[${modelName}]];
+    </script>
+</head>
+<body>
+<div id="tata_hitachi_loader" style="display:none"></div>
+
+
+<div th:replace="common/navbar::header"></div>
+<div th:replace="common/sidebar::sidebar"></div>
+
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/popper.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/datatables.min.js}"></script>
+<script th:src="@{/js/app/config.js}"></script>
+<script th:src="@{/js/app/main.js}"></script>
+
+<div class="content">
+    <div th:replace="${content}"></div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+    });
+</script>
+
+</body>
+</html>

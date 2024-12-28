@@ -1,0 +1,11 @@
+<div th:fragment="sidebar" class="sidebar" style="display: none" xmlns:th="http://www.w3.org/1999/xhtml">
+    <span style="color:white;cursor: pointer" onclick="toggleSidebar()" class="crossBtn">&times;</span>
+    <a href="/"  class="item"><i class="fas fa-home"></i> Home</a>
+    <a sec:authorize="hasRole('ADMIN')" href="/admin/user/create" class="item"><i class="fas fa-pencil-alt"></i> Create User</a>
+    <a sec:authorize="hasRole('ADMIN')" href="/admin/user/list" class="item"><i class="fas fa-id-card-alt"></i> View Users</a>
+    <a sec:authorize="hasRole('ADMIN')" href="/model/create"  class="item"><i class="fas fa-id-card-alt"></i> View Models</a>
+    <a sec:authorize="hasAnyRole('QC','ADMIN')" href="/checksheet/inspection/create"  class="item"><i class="fas fa-pencil-alt"></i> Create Sheet</a>
+    <a sec:authorize="hasAnyRole('QC', 'ADMIN')" href="/checksheet/list" class="item"><i class="fas fa-id-card-alt"></i> View Sheets</a>
+    <a href="/logout"  class="item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    <div class="divider"></div>
+</div>
