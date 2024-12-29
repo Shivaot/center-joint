@@ -3,9 +3,13 @@ const CONSTANT = {
         URL: "/model/save",
         TYPE: "POST"
     },
-    CREATE_CHECKSHEET: {
+    SAVE_INSPECTION: {
         URL: "/checksheet/inspection/save",
         TYPE: "POST"
+    },
+    SHOW_INSPECTION: {
+        URL: "/checksheet/inspection/show/",
+        TYPE: "GET"
     },
     DELETE_MODEL: {
         URL: "/model/delete",
@@ -18,5 +22,6 @@ const CONSTANT = {
     VALIDATE_MSN: {
         URL: "/checksheet/validate/",
         TYPE: "GET"
-    }
+    },
+    INSPECTION_SHEET_CREATION: "INSPECTION_SHEET_CREATION"
 }

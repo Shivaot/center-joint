@@ -2,7 +2,7 @@
     <th:block th:replace="layout/inspection-header :: inspection-header"></th:block>
 
 
-    <table id="inspection-table" class="cell-border display compact" style="width:100%">
+    <table id="inspection-table" class="cell-border" style="width:100%">
         <thead>
         <tr>
             <th>SI No</th>
@@ -16,26 +16,35 @@
             <th>View Image</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>Station 1</td>
-            <td>as  asd a sd asd a sd as d as da sd a sd as d as das d</td>
-            <td>Visual</td>
-            <td>Visual</td>
-            <td><input type='radio' class='btn-check na-outlined' name='options-outlined0' id='0-na' autocomplete='off'
-                       value='NA'>
-                <label class='btn btn-outline-warning' for='0-na'>NA</label>
-                <input type='radio' class='btn-check ng-outlined' name='options-outlined0' id='0-ng' autocomplete='off'
-                       value='NG'>
-                <label class='btn btn-outline-danger' for='0-ng'>NG</label>
-                <input type='radio' class='btn-check ok-outlined' name='options-outlined0' id='0-ok' autocomplete='off'
-                       value='OK'>
-                <label class='btn btn-outline-success' for='0-ok'>OK</label></td>
+        <tbody th:if="${context == 'UPDATE'}">
+        <tr th:each="sheetData,iter : ${sheet.sheetContents}">
+            <td th:text="${iter.count}"></td>
+            <td th:text="${sheetData.seqSerialNumber}"></td>
+            <td th:text="${sheetData.assemblyFunction}"></td>
+            <td th:text="${sheetData.checkPoint}"></td>
+            <td th:text="${sheetData.keypoint}"></td>
+            <td><input type="text" class="form-control comment" th:value="${sheetData.comment}"/></td>
+            <td>
+                <input type="radio" class="btn-check na-outlined" th:name="${'options-outlined'+iter.count}"
+                       th:id="${iter.count+'na'}" autocomplete="off" value="NA" th:checked="${sheetData.status == 'NA'}">
+                <label class="btn btn-outline-warning" th:for="${iter.count+'na'}">NA</label>
+
+                <input type="radio" class="btn-check ng-outlined" th:name="${'options-outlined'+iter.count}"
+                       th:id="${iter.count+'ng'}" autocomplete="off" value="NG" th:checked="${sheetData.status == 'NG'}">
+                <label class="btn btn-outline-danger" th:for="${iter.count+'ng'}">NG</label>
+
+                <input type="radio" class="btn-check ok-outlined" th:name="${'options-outlined'+iter.count}"
+                       th:id="${iter.count+'ok'}" autocomplete="off" value="OK" th:checked="${sheetData.status == 'OK'}">
+                <label class="btn btn-outline-success" th:for="${iter.count+'ok'}">OK</label>
+            </td>
             <td>Upload Image</td>
             <td>View Image</td>
+            <input class="content-Id" th:value="${sheetData.id}" type="hidden" />
         </tr>
+        </tbody>
+
+        <tbody th:if="${context == 'CREATE' AND modelName == 'EX200'}"
+               th:include="layout/inspection-models/first-model::first-model">
         </tbody>
     </table>
 

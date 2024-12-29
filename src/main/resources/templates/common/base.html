@@ -17,10 +17,12 @@
         var sheetType= [[${sheetType}]];
         var context = [[${context}]];
         var modelName = [[${modelName}]];
+        var sheetId = [[${sheetId}]];
     </script>
 </head>
 <body>
 <div id="tata_hitachi_loader" style="display:none"></div>
+<th:block th:include="common/message-toast  :: message-toast"></th:block>
 
 
 <div th:replace="common/navbar::header"></div>

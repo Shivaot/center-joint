@@ -25,6 +25,7 @@ public class PresentationService {
         model.addAttribute(IS_INSPECTION_SHEET, true);
         model.addAttribute(CONTEXT, "CREATE");
         model.addAttribute(MODEL_LIST, modelService.getAllModels());
+        model.addAttribute(IS_FINAL_SUBMIT, false);
         model.addAttribute("isRevisionSheet", false);
         model.addAttribute("modelName", Objects.nonNull(modelName) ? modelName.trim() : null);
         if (Objects.nonNull(modelName)) model.addAttribute("displayModelName", getDisplayName(modelName));

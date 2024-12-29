@@ -14,6 +14,11 @@
 
   <th:block th:replace="layout/inspection-layout :: inspection-layout"></th:block>
 
+  <div th:if="${isRevisionSheet != null and isRevisionSheet == false}" class="bg-light clearfix" style="margin:20px">
+    <button th:if="${!isFinalSubmit}" type="button" onclick="saveInspectionSheet(false)" class="btn btn-success float-end">Save</button>
+    <button th:if="${!isFinalSubmit}" type="button" onclick="saveInspectionSheet(true)" class="btn btn-warning">Final Submit</button>
+  </div>
+
   <script th:src="@{/js/app/inspection.js}"></script>
 
 </div>

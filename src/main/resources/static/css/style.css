@@ -83,6 +83,43 @@
     background-color: white;
 }
 
+
+.toast-container {
+    position: fixed !important;
+    right: 0;
+    top: 20px;
+    width: 25vw;
+    z-index: 9999998;
+    opacity: 0.8;
+}
+
+.toast-error {
+    background-color: darkred;
+    color: white;
+    font-weight: bolder;
+}
+
+.toast-success {
+    background-color: darkgreen;
+    color: white;
+    font-weight: bolder;
+}
+
+.toast:not(.showing):not(.show) {
+    display: none !important;
+}
+
+.revisions {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: 0.25rem;
+    border-radius: 0.25rem;
+    border-left-color: #F36F21;
+}
+
+
 #inspection-table th {
     border-top: 1px solid #dddddd;
     border-bottom: 1px solid #dddddd;
@@ -91,4 +128,9 @@
 
 #inspection-table th:first-child {
     border-left: 1px solid #dddddd;
+}
+
+#inspection-table tbody td {
+    word-break: keep-all;
+    vertical-align: top;
 }

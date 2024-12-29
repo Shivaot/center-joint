@@ -25,6 +25,7 @@ public final class Constant {
         public static final String IS_FINAL_SUBMIT = "isFinalSubmit";
         public static final String MODEL_LIST = "modelList";
         public static final String SHEET_HEADING = "heading";
+        public static final String VIEW_INSPECTION_SHEET = "View Inspection Sheet";
     }
 
     public static final class Role {
