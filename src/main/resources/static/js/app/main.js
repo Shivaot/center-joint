@@ -7,6 +7,36 @@ const $toast = $(".toast");
 
 $(document).ready(function () {
     __init__();
+
+    $('.imageUpload').on('change', function () {
+        var file = new FormData();
+        var uuid = $(this).closest("td").find(".image-uuid").val();
+        var sheetType = $(this).closest("td").find(".sheetType-id").val();
+        if (sheetType === undefined || sheetType == null) {
+            sheetType = $(".sheetType-id").val();
+        }
+        var files = $(this)[0].files[0];
+        const $td = $(this).closest("td").next();
+        var $that = $td.find("a");
+        file.append('file', files);
+        $.ajax({
+            url: '/image/upload?sheetType=' + sheetType + "&uuid=" + uuid,
+            type: 'post',
+            data: file,
+            contentType: false,
+            enctype: 'multipart/form-data',
+            processData: false,
+            success: function (response) {
+                if (response) {
+                    let resultUUID = response.data.uuid;
+                    $td.find('.image-uuid').val(resultUUID);
+                    $that.removeClass("d-none");
+                    $that.attr("href", '/image/view?sheetType=' + sheetType + '&uuid=' + resultUUID);
+                }
+                showSuccessToast(response.message)
+            }
+        });
+    });
 });
 
 function ajaxCall(url, type, data, action) {

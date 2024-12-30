@@ -68,6 +68,8 @@ const saveInspectionSheet = (isFinalSubmit) => {
         } else {
             inspectionContent.status = $('input[name=options-outlined' + data[0] + ']:checked').val();
         }
+        let uuid = rowNode.find('.image-uuid').val();
+        if (uuid !== undefined || uuid !== '') inspectionContent.uuid = uuid;
         if (isFinalSubmit === true) {
             if (data[0].trim() === '' || data[2].trim() === '' || data[3].trim() === ''
                 || inspectionContent.status === undefined || inspectionContent.status.trim() === '') {

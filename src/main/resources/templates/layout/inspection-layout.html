@@ -37,8 +37,22 @@
                        th:id="${iter.count+'ok'}" autocomplete="off" value="OK" th:checked="${sheetData.status == 'OK'}">
                 <label class="btn btn-outline-success" th:for="${iter.count+'ok'}">OK</label>
             </td>
-            <td>Upload Image</td>
-            <td>View Image</td>
+            <td>
+                <input class="image-uuid" type="hidden" th:value="${sheetData.uuid}"/>
+                <input type="hidden" class="sheetType-id" value="INSPECTION_SHEET" />
+                <div class="mb-3 d-flex">
+                    <label class="form-label"></label>
+                    <input class="form-control formFile imageUpload w-30" type="file" accept="image/*" capture/>
+                </div>
+            </td>
+            <td>
+                <a th:if="${sheetData.isImageUploaded == true}" class="ms-3" th:href="@{|/image/view?sheetType=INSPECTION_SHEET&uuid=${sheetData.uuid}|}" target="_blank">
+                    <i class="fa-regular fas fa-image fa-lg"></i>
+                </a>
+                <a th:if="${sheetData.isImageUploaded == false}" class="ms-3 d-none" href="" target="_blank">
+                    <i class="fa-regular fas fa-image fa-lg"></i>
+                </a>
+            </td>
             <input class="content-Id" th:value="${sheetData.id}" type="hidden" />
         </tr>
         </tbody>
